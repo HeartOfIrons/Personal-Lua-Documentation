@@ -1,0 +1,90 @@
+------ Luau is the scripting language;
+------ It is a fast, small, safe, gradually typed embeddable scripting language derived from Lua 5.1. 
+
+------ Support
+The Script Editor supports Luau with autocompletion, syntax highlighting, static linting, type checking, and script analysis. 
+It also shows documentation and function signatures for members of the Engine API.
+
+------ Types [LINE 34]
+Luau includes the following data types:
+
+nil represents non-existence or nothingness. It's different from any other value or data type.
+Booleans, or bool, have a value of either false or true.
+Numbers, or double, represent double-precision (64-bit) floating-point numbers.
+Strings are sequences of characters, such as letters, numbers, and symbols.
+Tables are arrays or dictionaries of any value except nil.
+Enums are fixed lists of items.
+
+Luau is dynamically typed by default. Variables, function parameters, and return values can be any data type. 
+This helps you write code faster because you don't need to provide types for each piece of data. 
+You can still declare explicit types for variables in Luau and enable strict type checking to make type issues obvious and easy to locate.
+
+------ Data Structures
+You can also implement the following data structures using primitive data types:
+
+Stacks are Last-In-First-Out collections of items that you can implement using tables.
+Queues are First-In-First-Out collections of items that you can implement using tables.
+Metatables are tables with advanced configurations that can achieve functionalities such as storing pairs of keys and values and calculating arithmetic operations.
+Features
+In Luau, variables and functions can have global and local scope within a script. Luau has logical, relational, and compound assignment operators. 
+You can use control structures and functions to control when Luau executes code. 
+Many operators and variable assignments perform type coercion to change values to the types that Luau expects.
+
+
+
+
+------ ------ TYPES
+NIL - LINE 42
+BOOLEAN - LINE 50
+NUMBERS - LINE 59
+
+
+--Nil: 
+
+In Luau, nil represents non-existence or nothingness. It's different from any other value or data type. 
+You can use it to destroy a variable or remove a value in a table. It's the only value other than false which doesn't evaluate to true.
+
+Luau has a garbage collector that removes data that is no longer accessible by any script. For best performance,
+redefine large variables as nil in long-running scripts when you don't need them anymore so the garbage collector removes them.
+
+--Boolean:
+
+Conditionals
+If a value isn't false or nil, then Luau evaluates it as true in conditional statements. Unlike many other languages, 
+Luau considers both zero and the empty string as true.
+
+Operators
+You can formulate complex conditions with relational and logical operators.
+
+--Numbers:
+
+The number data type, or double, represents double-precision (64-bit) floating-point numbers. 
+Numbers can range from -1.7 × 10308 to 1.7 × 10308 (around 15 digits of precision, positive or negative).
+
+Signed and Unsigned
+The sign of the number indicates whether it's positive or negative. For example, 1 is positive and -1 is negative. In Luau, the number -0 is equivalent to 0.
+
+Number Classifications
+Luau doesn't distinguish between integers and numbers, but the API Reference Manual sometimes distinguishes between them to be more specific about how to use each API.
+
+float
+The float number type refers to a real number with a decimal place. In computer science terms, they are single-precision (32-bit) floating-point number, 
+which isn't as precise as double-precision floating-point numbers, but is sufficiently precise for most use cases and requires less memory and storage.
+
+int
+The integer number type, or int, refers to a 32-bit whole number, which ranges from -231 to 231 - 1. 
+Properties and functions that expect integers may automatically round or raise errors when you assign or pass non-integers to them.
+
+int64
+The int64 number type refers to a signed 64-bit integer, which ranges from -263 to 263 - 1. 
+This type of integer is common for methods that use ID numbers from the website. For example, Player.UserId is an int64,
+ and MarketplaceService:PromptPurchase() and TeleportService:Teleport() each expect int64 for the ID arguments.
+
+Notation
+Numbers are notated with the most significant digits first (big-endian). There are multiple ways to notate number literals in Roblox Lua:
+
+Decimal (base-10) — Write the digits of the number normally using digits 0–9 with a single optional decimal point, for example 7, 1.25, or -22.5.
+Scientific notation — Write a decimal number followed by e or e+, then an integer to raise the decimal number to a power of 10. For instance, 12e3 is 12 × 10^3 (12,000).
+Hexadecimal (base-16) — Begin the number with 0x followed by digits 0–9 or A–F (capitalization ignored). For example, 0xF is 15 and 0x3FC is 1020.
+Binary (base-2) — Begin the number with 0b followed by 0s or 1s, for instance 0b1100 (12 in decimal format).
+
