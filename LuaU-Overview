@@ -88,3 +88,18 @@ Scientific notation — Write a decimal number followed by e or e+, then an inte
 Hexadecimal (base-16) — Begin the number with 0x followed by digits 0–9 or A–F (capitalization ignored). For example, 0xF is 15 and 0x3FC is 1020.
 Binary (base-2) — Begin the number with 0b followed by 0s or 1s, for instance 0b1100 (12 in decimal format).
 
+Operations
+
+You can use logical and relational operators to manipulate and compare numbers. 
+You can also use mathematical functions such as math.sqrt() and math.exp() in the math library and bitwise operations in the bit32 library.
+
+Type Introspection
+
+You can determine if a value x is a number by using type(x) or typeof(x). Both return the string number if x is a number.
+
+Rounding Functions
+
+You can round numbers using math.floor(), math.ceil(), or math.modf(). 
+These functions return an integer result if Luau can represent it as an integer. If the number is too large, 
+Luau returns it as a float.
+
